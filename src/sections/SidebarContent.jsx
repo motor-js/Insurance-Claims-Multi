@@ -22,7 +22,6 @@ const SidebarContent = (props) => {
       backgroundColor="altGray1"
       justifyContent="top"
       border={{ color: "brand" }}
-      // style={{ zIndex: "999" }}
     >
       <Box direction="column" overflow="visible">
         <Box
