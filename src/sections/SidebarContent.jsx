@@ -14,6 +14,7 @@ const SidebarContent = (props) => {
   };
   return (
     <Sidebar
+      pullRight
       width="30%"
       collapsable
       direction="column"
