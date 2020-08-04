@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Filter, Sidebar } from "@motor-js/core";
+import { Box, Sidebar, SmartHeading } from "@motor-js/core";
 import styled from "styled-components";
 
 import { Menu as styledMenu } from "@styled-icons/ionicons-solid";
@@ -75,9 +75,9 @@ const NavbarContent = (props) => {
           overflow="hidden"
         >
           <MeniIcon onClick={toggleNav} size={25} />
-          Filters
+          <SmartHeading level={3} type="appName"></SmartHeading>
         </Box>
-        <Box direction="column" padding="0px 0px 0px 30px" overflow="visible">
+        <Box direction="column" padding="10px 0px 0px 0px" overflow="visible">
           {items.map((item) => {
             return (
               // <NavItem
@@ -99,16 +99,26 @@ const NavbarContent = (props) => {
 };
 
 const StyledNavItem = styled.div`
-  height: 70px;
-  width: 75px; /* width must be same size as NavBar to center */
+  // height: 70px;
+  // width: 75px; /* width must be same size as NavBar to center */
+  width="30%"
   text-align: center; /* Aligns <a> inside of NavIcon div */
   margin-bottom: 0; /* Puts space between NavItems */
+  :hover {
+    // opacity: 0.7;
+     border-right 5px solid dimgray;
+         background-color: aquamarine;
+     color:"white";
+    // padding-left: 5px;
+  }
   a {
     font-size: 2.7em;
     color: ${(props) => (props.active ? "white" : "red")};
+    text-decoration: none; /* Gets rid of underlining of text */
     :hover {
       opacity: 0.7;
-      text-decoration: none; /* Gets rid of underlining of icons */
+      // border-right 5px solid dimgray;
+      // padding-left: 5px;
     }
   }
 `;

@@ -30,7 +30,7 @@ const PageContent = () => {
   return (
     <Box padding="10px" width="100%" overflow="scroll" direction="column">
       <CurrentSelections minHeight="60px" width="100%" />
-      <Box width="100%" direction={flexDirection}>
+      {/* <Box width="100%" direction={flexDirection}>
         <Box flex={true} height="120px" {...boxProps}>
           <KPI
             margin="10px"
@@ -104,7 +104,7 @@ const PageContent = () => {
             // backgroundColor="white"
           />
         </Box>
-      </Box>
+      </Box> */}
 
       <Box width="100%" flex="grow" wrapProp={true} overflow="visible">
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
