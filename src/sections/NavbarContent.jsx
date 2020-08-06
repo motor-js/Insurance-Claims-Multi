@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Sidebar, SmartHeading } from "@motor-js/core";
 import styled from "styled-components";
 
@@ -6,10 +6,10 @@ import styled from "styled-components";
 
 import { Menu as styledMenu } from "@styled-icons/ionicons-solid";
 import {
-  BrowserRouter as Router,
-  Route,
+  // BrowserRouter as Router,
+  // Route,
   Link,
-  withRouter,
+  // withRouter,
 } from "react-router-dom";
 
 const MeniIcon = styled(styledMenu)`
@@ -40,7 +40,7 @@ const items = [
 ];
 
 const NavbarContent = (props) => {
-  const [path, setPath] = useState("/");
+  // const [path, setPath] = useState("/");
 
   const toggleNav = () => {
     props.onClick();
@@ -48,7 +48,7 @@ const NavbarContent = (props) => {
 
   const itemClick = (e) => {
     // console.log(e.target.name);
-    setPath(e.target.path);
+    // setPath(e.target.path);
     // this.setState({ activePath: path });
   };
 
@@ -130,7 +130,7 @@ const NavItem = (props) => {
   const handleClick = (e) => {
     // const { path, onItemClick } = this.props;
     // onItemClick(path);
-    console.log(e.target);
+    // console.log(e.target);
   };
 
   // const { active } = this.props;

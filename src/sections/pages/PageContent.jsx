@@ -3,7 +3,7 @@ import {
   Box,
   useScreenSize,
   CurrentSelections,
-  KPI,
+  // KPI,
   Bar,
   Column,
   Pie,
@@ -16,7 +16,9 @@ const PageContent = () => {
   const height = "315px";
 
   let flexDirection = "column";
-  if (screen === "desktop" || screen === "largeDesktop") flexDirection = "row";
+  if (screen === "desktop" || screen === "largeDesktop") {
+    flexDirection = "row";
+  }
 
   const boxProps = {
     backgroundColor: "white",
