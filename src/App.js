@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
+import { navItems } from "./navItems";
 import "./App.css";
 import {
   FooterContent,
   HeaderContent,
   SidebarContent,
-  // NavbarContent,
   MainContent,
   PageContent,
 } from "./sections";
@@ -27,15 +27,10 @@ const FilterIcon = styled(styledFilter)`
   position: absolute;
   right: 0;
 `;
-// const MeniIcon = styled(styledMenu)`
-//   color: white;
-//   padding: 0px 30px 0px 5px;
-// `;
 
 function App() {
   //use the Siderbar hook
   const { isOpen, toggle } = useSidebar();
-  // const [showNav, toggleNav] = useState(false);
 
   return (
     <Router>
@@ -45,42 +40,16 @@ function App() {
         outerContainerId={"App"}
         type="scaleDown"
       >
-        <NavItem path="/" name="Home" css="fa fa-fw fa-home" key={1}>
-          {/* <Home /> */}
-        </NavItem>
-        <NavItem
-          path="/sales"
-          name="Executive Sales"
-          css="fa fa-fw fa-home"
-          key={2}
-        />
-        {/* <NavItem
-            path="/burger-menu"
-            name="Burger"
-            css="fa fa-fw fa-home"
-            key={3}
-          /> */}
-        {/* <a className="menu-item" href="/">
-            <Home /> 
-            Home
-          </a> */}
-        {/* <a
-            className="menu-item"
-            href="/sidebar"
-            style={{ color: "blue", background: "yellow" }}
-          >
-            Burgers
-          </a>
-          <a className="menu-item" href="/pizzas">
-            Pizzas
-          </a>
-          <a className="menu-item" href="/desserts" style={{ color: "brand" }}>
-            Desserts
-          </a> */}
-        {/* <Filter label="Claim Status" dimension={["Claim Status"]} />
-          <Filter label="Claim Type" dimension={["Claim Type"]} />
-          <Filter label="Claim Sub-Type" dimension={["Claim Sub-Type"]} />
-          <Filter label="Broker" dimension={["BrokerName"]} /> */}
+        {navItems.map((item) => {
+          return (
+            <NavItem
+              path={item.path}
+              name={item.name}
+              css={item.css}
+              key={item.key}
+            ></NavItem>
+          );
+        })}
       </BurgerMenuSideBar>
       <div id="App">
         <Grid
@@ -88,7 +57,6 @@ function App() {
           cols={["auto"]}
           areas={[["header"], ["main"], ["footer"]]}
           backgroundColor="altGray1"
-          // id="App"
           id="page-wrap"
         >
           {/** HEADER */}
