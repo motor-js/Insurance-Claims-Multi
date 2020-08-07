@@ -131,7 +131,7 @@ const PageContent = () => {
             suppressZero={true}
             textOnAxis="xAxis"
             border={false}
-            chartColor={chartColor}
+            // chartColor={chartColor}
           />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
@@ -160,7 +160,7 @@ const PageContent = () => {
             suppressZero={true}
             title="Total Claims Cost"
             border={false}
-            chartColor={chartColor}
+            // chartColor={chartColor}
             showLegend={false}
           />
         </Box>
@@ -191,7 +191,7 @@ const PageContent = () => {
             //   "Choose the selector on the left to see the costs for different dimensions"
             // }
             border={false}
-            chartColor={chartColor}
+            // chartColor={chartColor}
           />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
@@ -207,7 +207,7 @@ const PageContent = () => {
             suppressZero={true}
             border={false}
             showLegend={true}
-            chartColor={chartColor}
+            // chartColor={chartColor}
           />
         </Box>
       </Box>
