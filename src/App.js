@@ -14,10 +14,11 @@ import {
   Grid,
   Box,
   useSidebar,
-  BurgerMenuSideBar,
+  BurgerMenu,
   NavItem,
+  Filter,
 } from "@motor-js/core";
-import { Filter as styledFilter } from "@styled-icons/ionicons-solid";
+import { Filter as styledFilter } from "@styled-icons/feather";
 // import { Menu as styledMenu } from "@styled-icons/ionicons-solid";
 // import { Home, X } from "react-feather";
 
@@ -35,10 +36,10 @@ function App() {
   return (
     <Router>
       {/** NAVBAR */}
-      <BurgerMenuSideBar
+      <BurgerMenu
         pageWrapId={"page-wrap"}
         outerContainerId={"App"}
-        type="scaleDown"
+        type="scaleRotate"
       >
         {navItems.map((item) => {
           return (
@@ -50,7 +51,7 @@ function App() {
             ></NavItem>
           );
         })}
-      </BurgerMenuSideBar>
+      </BurgerMenu>
       <div id="App">
         <Grid
           rows={["60px", "auto", "30px"]}
