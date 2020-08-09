@@ -3,7 +3,7 @@ import { SideBar, Filter } from "@motor-js/core";
 import { Filter as FilterIcon } from "@styled-icons/feather";
 
 const Logo = require("../images/logo.png");
-const Qlik = require("../images/QlikSense.jpeg");
+const Qlik = require("../images/Qlik.png");
 
 const FilterContent = (props) => {
   return (
@@ -13,13 +13,14 @@ const FilterContent = (props) => {
       right
       borderRadius="20px 0px 0px 20px"
       openIcon="filter"
+      openIconColor="white"
       header={
         <div style={{ fontSize: "20px", color: "white" }}>
           <FilterIcon size={25} /> Filters
         </div>
       }
       footer={
-        <div style={{ color: "#ff6961" }}>
+        <div style={{ color: "#ff6961", fontSize: "24px" }}>
           <span>
             <a href="http://motor-js.io//">
               <img src={Logo} style={{ width: "10%" }} alt={"logo"} />
