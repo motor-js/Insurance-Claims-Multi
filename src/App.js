@@ -1,57 +1,37 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import styled from "styled-components";
-import { navItems } from "./navItems";
+
 import "./App.css";
 import {
   FooterContent,
   HeaderContent,
-  SidebarContent,
+  FilterContent,
+  NavContent,
   MainContent,
   PageContent,
 } from "./sections";
-import {
-  Grid,
-  Box,
-  useSidebar,
-  BurgerMenu,
-  NavItem,
-  Filter,
-} from "@motor-js/core";
-import { Filter as styledFilter } from "@styled-icons/feather";
+import { Grid, Box } from "@motor-js/core";
+// import { Filter as styledFilter } from "@styled-icons/feather";
 // import { Menu as styledMenu } from "@styled-icons/ionicons-solid";
 // import { Home, X } from "react-feather";
 
-const FilterIcon = styled(styledFilter)`
-  color: white;
-  padding: 0px 30px 0px 5px;
-  position: absolute;
-  right: 0;
-`;
+// const FilterIcon = styled(styledFilter)`
+//   color: white;
+//   padding: 0px 30px 0px 5px;
+//   position: absolute;
+//   right: 0;
+//   &:hover {
+//     opacity: 0.8;
+//     cursor: pointer;
+//   }
+// `;
 
 function App() {
-  //use the Siderbar hook
-  const { isOpen, toggle } = useSidebar();
-
   return (
     <Router>
       {/** NAVBAR */}
-      <BurgerMenu
-        pageWrapId={"page-wrap"}
-        outerContainerId={"App"}
-        type="scaleRotate"
-      >
-        {navItems.map((item) => {
-          return (
-            <NavItem
-              path={item.path}
-              name={item.name}
-              css={item.css}
-              key={item.key}
-            ></NavItem>
-          );
-        })}
-      </BurgerMenu>
+      <NavContent />
+      <FilterContent />
       <div id="App">
         <Grid
           rows={["60px", "auto", "30px"]}
@@ -74,10 +54,10 @@ function App() {
                 ✌️
               </span>
             </span>
-            <FilterIcon onClick={toggle} size={25} />
+            {/* <FilterIcon onClick={toggle} size={25} /> */}
           </HeaderContent>
           {/** SIDEBAR */}
-          <SidebarContent onClick={toggle} isOpen={isOpen} />
+          {/* <SidebarContent onClick={toggle} isOpen={isOpen} /> */}
           {/** MAIN */}
           <Box gridArea="main">
             <Switch>

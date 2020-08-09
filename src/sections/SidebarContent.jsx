@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Filter, Sidebar } from "@motor-js/core";
+import { Box, Filter, SideBar } from "@motor-js/core";
 import styled from "styled-components";
 import { Filter as styledFilter } from "@styled-icons/ionicons-solid";
 
@@ -13,7 +13,7 @@ const SidebarContent = (props) => {
     props.onClick();
   };
   return (
-    <Sidebar
+    <SideBar
       pullRight
       width="30%"
       collapsable
@@ -47,7 +47,7 @@ const SidebarContent = (props) => {
           <Filter label="Broker" dimension={["BrokerName"]} />
         </Box>
       </Box>
-    </Sidebar>
+    </SideBar>
   );
 };
 
