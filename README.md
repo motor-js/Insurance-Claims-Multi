@@ -45,5 +45,5 @@ This is a paid for React library and is only free if used for Non-Commercial pur
   ## Screenshots
 
   ![Dashboard Screenshot1](./src/images/screenshot1.png)
-  ![Dashboard Screenshot2](./src/images/screenshot1.png)
-  ![Dashboard Screenshot3](./src/images/screenshot1.png)
+  ![Dashboard Screenshot2](./src/images/screenshot2.png)
+  ![Dashboard Screenshot3](./src/images/screenshot3.png)
