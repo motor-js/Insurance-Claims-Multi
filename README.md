@@ -1,6 +1,6 @@
-![Motor Logo](./images/logo.png)
+![Motor Logo](./src/images/logo.png)
 
-# Insurance CLaims Multi Page Starter Application
+# Insurance Claims Multi Page Starter Application
 
 A sample multi page web application using motor-js
 
@@ -44,6 +44,6 @@ This is a paid for React library and is only free if used for Non-Commercial pur
 
   ## Screenshots
 
-  ![Dashboard Screenshot1](./images/screenshot1.png)
-  ![Dashboard Screenshot2](./images/screenshot1.png)
-  ![Dashboard Screenshot3](./images/screenshot1.png)
+  ![Dashboard Screenshot1](./src/images/screenshot1.png)
+  ![Dashboard Screenshot2](./src/images/screenshot1.png)
+  ![Dashboard Screenshot3](./src/images/screenshot1.png)
