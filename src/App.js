@@ -54,10 +54,7 @@ function App() {
                 ✌️
               </span>
             </span>
-            {/* <FilterIcon onClick={toggle} size={25} /> */}
           </HeaderContent>
-          {/** SIDEBAR */}
-          {/* <SidebarContent onClick={toggle} isOpen={isOpen} /> */}
           {/** MAIN */}
           <Box gridArea="main">
             <Switch>
