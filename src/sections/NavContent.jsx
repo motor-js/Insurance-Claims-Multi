@@ -1,12 +1,12 @@
 import React from "react";
-import { SideBar, SmartHeading, NavItem } from "@motor-js/core";
+import { SidebarNext, SmartHeading, NavItem } from "@motor-js/core";
 import { navItems } from "./navItems";
 
 const Logo = require("../images/logo.png");
 
 const NavContent = (props) => {
   return (
-    <SideBar
+    <SidebarNext
       headerHeight="200px"
       pageWrapId={"page-wrap"}
       outerContainerId={"App"}
@@ -37,7 +37,7 @@ const NavContent = (props) => {
           ></NavItem>
         );
       })}
-    </SideBar>
+    </SidebarNext>
   );
 };
 

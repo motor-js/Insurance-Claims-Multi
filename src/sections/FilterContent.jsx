@@ -1,5 +1,5 @@
 import React from "react";
-import { SideBar, Filter } from "@motor-js/core";
+import { SidebarNext, Filter } from "@motor-js/core";
 import { Filter as FilterIcon } from "@styled-icons/feather";
 
 const Logo = require("../images/logo.png");
@@ -7,7 +7,7 @@ const Qlik = require("../images/Qlik.png");
 
 const FilterContent = (props) => {
   return (
-    <SideBar
+    <SidebarNext
       pageWrapId={"page-wrap"}
       outerContainerId={"App"}
       right
@@ -35,7 +35,7 @@ const FilterContent = (props) => {
       <Filter label="Claim Type" dimension={["Claim Type"]} />
       <Filter label="Claim Sub-Type" dimension={["Claim Sub-Type"]} />
       <Filter label="Broker" dimension={["BrokerName"]} />
-    </SideBar>
+    </SidebarNext>
   );
 };
 
