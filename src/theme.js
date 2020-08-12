@@ -3,6 +3,11 @@ const theme = {
   global: {
     color: {
       brand: '#ff6961'
+    },
+  },
+  line: {
+    main: {
+      dataPointsToShow: 680
     }
   }
 }

@@ -29,7 +29,6 @@ const PageContent = () => {
   return (
     <Box padding="10px" width="100%" overflow="scroll" direction="column">
       <CurrentSelections minHeight="60px" width="100%" />
-
       <Box
         width="100%"
         flex="grow"
@@ -38,6 +37,24 @@ const PageContent = () => {
         direction={flexDirection}
       >
         <Box height='400px' width={dynamicWidth} {...boxProps} overflow="visible">
+        <Line
+          height='400px'
+          curve='Natural'
+          symbol='none'
+          chartColor={['#ff6961']}
+          border=''
+          areaChart
+          cols={[
+            {
+              qField: "[Claim Settled Date]",
+              qLabel: "Claim Settled Date",
+            },
+            {
+              qField: "=Sum([Total Claim Cost])",
+              qLabel: "Total Claim Cost",
+            },
+          ]} 
+        />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
         </Box>
