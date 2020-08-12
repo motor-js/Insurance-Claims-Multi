@@ -11,20 +11,7 @@ import {
   PageContent,
 } from "./sections";
 import { Grid, Box } from "@motor-js/core";
-// import { Filter as styledFilter } from "@styled-icons/feather";
-// import { Menu as styledMenu } from "@styled-icons/ionicons-solid";
-// import { Home, X } from "react-feather";
 
-// const FilterIcon = styled(styledFilter)`
-//   color: white;
-//   padding: 0px 30px 0px 5px;
-//   position: absolute;
-//   right: 0;
-//   &:hover {
-//     opacity: 0.8;
-//     cursor: pointer;
-//   }
-// `;
 
 function App() {
   return (

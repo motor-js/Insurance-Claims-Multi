@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { config } from "./config.js";
+import { config } from "./config_luke.js";
 
 import { Motor } from "@motor-js/core";
 import theme from "./theme";

@@ -12,7 +12,7 @@ import {
 const MainContent = () => {
   const { screen } = useScreenSize();
 
-  const chartColor = "red";
+  const chartColor = "divergent9";
   const height = "315px";
 
   let flexDirection = "column";
@@ -20,7 +20,8 @@ const MainContent = () => {
 
   const boxProps = {
     backgroundColor: "white",
-    border: { color: "brand" },
+    //border: { color: "brand" },
+    elevation: "0 8px 6px -6px #ccc",
     margin: "5px",
     borderRadius: "8px",
   };
