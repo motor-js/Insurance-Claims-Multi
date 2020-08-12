@@ -12,7 +12,7 @@ import {
 const MainContent = () => {
   const { screen } = useScreenSize();
 
-  const chartColor = "divergent9";
+  const chartColor = "bio";
   const height = "315px";
 
   let flexDirection = "column";
