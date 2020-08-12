@@ -1,6 +1,7 @@
 {
   "name": "motor-starter",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@motor-js/core": "^1.1.1-beta.0",
