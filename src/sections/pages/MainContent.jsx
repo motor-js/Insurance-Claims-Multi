@@ -34,6 +34,7 @@ const MainContent = () => {
       <Box width="100%" direction={flexDirection}>
         <Box flex={true} height="120px" {...boxProps}>
           <KPI
+            onClick={() => {window.confirm("You've clicked me!")}}
             margin="10px"
             cols={[
               "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [ClaimCounter] )",
@@ -87,16 +88,7 @@ const MainContent = () => {
             margin="10px"
             cols={[
               {
-                qField:
-                  "=Avg( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])",
-                // qNumFormat: {
-                //   qType: "M",
-                //   qnDec: 0,
-                //   qUseThou: 1,
-                //   qFmt: "£#,##0",
-                //   qDec: ".",
-                //   qThou: ",",
-                // },
+                qField: "=Avg( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])",
                 qNumType: "M",
                 qNumFmt: "£#,##0",
               },
@@ -105,8 +97,6 @@ const MainContent = () => {
             label="Ave Claim Costs (YTD)"
             size="small"
             border={false}
-            // border={{ color: brand }}
-            // backgroundColor="white"
           />
         </Box>
       </Box>
@@ -142,8 +132,6 @@ const MainContent = () => {
             height={height}
             cols={[
               {
-                // qField: "[Claim Occurrence Date]",
-                // qLabel: "Claim Type Drill-down by Claim Occurrence Year",
                 qField: "[Claim Notification Date.autoCalendar.Year]",
                 qLabel: "Claim Year",
               },
@@ -190,9 +178,6 @@ const MainContent = () => {
             showLegend={false}
             suppressScroll={true}
             title={"Total claim cost"}
-            // subTitle={
-            //   "Choose the selector on the left to see the costs for different dimensions"
-            // }
             border={false}
             chartColor={chartColor}
           />

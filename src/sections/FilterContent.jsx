@@ -1,5 +1,5 @@
 import React from "react";
-import { SidebarNext, Filter } from "@motor-js/core";
+import { SidebarNext, Filter, Button } from "@motor-js/core";
 import { Filter as FilterIcon } from "@styled-icons/feather";
 
 const Logo = require("../images/logo.png");
@@ -35,6 +35,7 @@ const FilterContent = (props) => {
       <Filter label="Claim Type" dimension={["Claim Type"]} />
       <Filter label="Claim Sub-Type" dimension={["Claim Sub-Type"]} />
       <Filter label="Broker" dimension={["BrokerName"]} />
+      <Button type='clearSelections'>Clear Selections</Button>
     </SidebarNext>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@motor-js/core";
+import { Box, Search } from "@motor-js/core";
 // import { useLocation } from "react-router-dom";
 
 const HeaderContent = (props) => {

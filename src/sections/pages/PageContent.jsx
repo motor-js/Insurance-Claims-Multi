@@ -3,10 +3,7 @@ import {
   Box,
   useScreenSize,
   CurrentSelections,
-  // KPI,
-  Bar,
-  Column,
-  Pie,
+  Line,
 } from "@motor-js/core";
 
 const PageContent = () => {
@@ -41,105 +38,29 @@ const PageContent = () => {
         direction={flexDirection}
       >
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Bar
-            height={height}
-            cols={[
-              {
-                qField: "[Claim Notification Date.autoCalendar.Year]",
-                qLabel: "Claim Year",
+          <Line 
+          height={height}
+          cols={[
+            { qField: "[Vehicle Type]", qLabel: "Vehicle Type" },
+            // { qField: "[Claim Type]", qLabel: "Claim Type" },
+            {
+              qField: "=Sum({[State 1]}[Total Claim Cost])",
+              qLabel: "Total Claim Costs",
+              qNumFormat: {
+                qType: "M",
+                qnDec: 0,
+                qUseThou: 1,
+                qFmt: "£#,##0",
+                qDec: ".",
+                qThou: ",",
               },
-              {
-                qField: "[Claim Type]",
-                qLabel: "Claim Type",
-              },
-              {
-                qField:
-                  "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1} > } [ClaimCounter] )",
-                qLabel: "Claims Opened (All Yrs YTD)",
-              },
-            ]}
-            stacked={true}
-            suppressZero={true}
-            textOnAxis="xAxis"
-            border={false}
-            chartColor={chartColor}
-          />
+            },
+          ]}
+        />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Column
-            height={height}
-            cols={[
-              {
-                // qField: "[Claim Occurrence Date]",
-                // qLabel: "Claim Type Drill-down by Claim Occurrence Year",
-                qField: "[Claim Notification Date.autoCalendar.Year]",
-                qLabel: "Claim Year",
-              },
-              {
-                qField: "=Sum([Total Claim Cost])",
-                qLabel: "Total Claim Cost",
-                qNumFormat: {
-                  qType: "M",
-                  qnDec: 0,
-                  qUseThou: 1,
-                  qFmt: "£#,##0",
-                  qDec: ".",
-                  qThou: ",",
-                },
-              },
-            ]}
-            suppressZero={true}
-            title="Total Claims Cost"
-            border={false}
-            chartColor={chartColor}
-            showLegend={false}
-          />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Bar
-            height={height}
-            cols={[
-              { qField: "[Vehicle Type]", qLabel: "Vehicle Type" },
-              // { qField: "[Claim Type]", qLabel: "Claim Type" },
-              {
-                qField: "=Sum({[State 1]}[Total Claim Cost])",
-                qLabel: "Total Claim Costs",
-                qNumFormat: {
-                  qType: "M",
-                  qnDec: 0,
-                  qUseThou: 1,
-                  qFmt: "£#,##0",
-                  qDec: ".",
-                  qThou: ",",
-                },
-              },
-            ]}
-            suppressZero={true}
-            showLegend={false}
-            suppressScroll={true}
-            title={"Total claim cost"}
-            // subTitle={
-            //   "Choose the selector on the left to see the costs for different dimensions"
-            // }
-            border={false}
-            chartColor={chartColor}
-          />
-        </Box>
-        <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Pie
-            height={height}
-            cols={[
-              { qField: "[Claim Type]", qLabel: "Claim Type" },
-              {
-                qField: "=Sum({[State 1]}[Total Claim Cost])",
-                qLabel: "Total Claim Costs",
-              },
-            ]}
-            suppressZero={true}
-            border={false}
-            showLegend={true}
-            chartColor={chartColor}
-          />
         </Box>
       </Box>
     </Box>
