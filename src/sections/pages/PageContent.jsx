@@ -19,7 +19,7 @@ const PageContent = () => {
 
   const boxProps = {
     backgroundColor: "white",
-    border: { color: "brand" },
+    elevation: "0 8px 6px -6px #ccc",
     margin: "5px",
     borderRadius: "8px",
   };
@@ -37,28 +37,7 @@ const PageContent = () => {
         overflow="visible"
         direction={flexDirection}
       >
-        <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Line 
-          height={height}
-          cols={[
-            { qField: "[Vehicle Type]", qLabel: "Vehicle Type" },
-            // { qField: "[Claim Type]", qLabel: "Claim Type" },
-            {
-              qField: "=Sum({[State 1]}[Total Claim Cost])",
-              qLabel: "Total Claim Costs",
-              qNumFormat: {
-                qType: "M",
-                qnDec: 0,
-                qUseThou: 1,
-                qFmt: "£#,##0",
-                qDec: ".",
-                qThou: ",",
-              },
-            },
-          ]}
-        />
-        </Box>
-        <Box width={dynamicWidth} {...boxProps} overflow="visible">
+        <Box height='400px' width={dynamicWidth} {...boxProps} overflow="visible">
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
         </Box>
