@@ -188,11 +188,11 @@ const MainContent = () => {
             cols={[
               { qField: "[Claim Type]", qLabel: "Claim Type" },
               {
-                qField: "=Sum({[State 1]}[Total Claim Cost])",
+                qField: "=Sum([Total Claim Cost])",
                 qLabel: "Total Claim Costs",
               },
             ]}
-            suppressZero={true}
+            
             border={false}
             showLegend={true}
             chartColor={chartColor}

@@ -31,10 +31,10 @@ const FilterContent = (props) => {
         </div>
       }
     >
-      <Filter label="Claim Status" dimension={["Claim Status"]} />
-      <Filter label="Claim Type" dimension={["Claim Type"]} />
-      <Filter label="Claim Sub-Type" dimension={["Claim Sub-Type"]} />
-      <Filter label="Broker" dimension={["BrokerName"]} />
+      <Filter width='100%' label="Claim Status" dimension={["Claim Status"]} />
+      <Filter width='100%' label="Claim Type" dimension={["Claim Type"]} />
+      <Filter width='100%' label="Claim Sub-Type" dimension={["Claim Sub-Type"]} />
+      <Filter width='100%' label="Broker" dimension={["BrokerName"]} />
       <Button type='clearSelections'>Clear Selections</Button>
     </SidebarNext>
   );

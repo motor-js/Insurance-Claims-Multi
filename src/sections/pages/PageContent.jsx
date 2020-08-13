@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Box,
+  Table,
   useScreenSize,
   CurrentSelections,
   Line,
@@ -57,6 +58,57 @@ const PageContent = () => {
         />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
+          <Table 
+            margin='20px'
+            size='small'
+            height='600px'
+            tableWidth='800px'
+            wrapperWidth='600px'
+            columns={[
+              {
+                dimensions: [
+                  {
+                    qField: "[Vehicle Type]",
+                    qLabel: 'Vehicle Type',
+                    width: '10%',
+                  },
+                  {
+                    qField: "[Claim Settled Date]",
+                    qLabel: 'Claim Settled Date',
+                    width: '10%',
+                  },
+                  {
+                    qField: "[Claim Type]",
+                    qLabel: 'Claim Type',
+                    width: '10%',
+                  },
+                  {
+                    qField: "[Vehicle Type]",
+                    qLabel: 'Vehicle Type',
+                    width: '15%',
+                  },
+                  {
+                    qField: "[Claim Sub-Type]",
+                    qLabel: 'Claim Sub-Type',
+                    width: '15%',
+                  },
+                  {
+                    qField: "[Claim Status]",
+                    qLabel: 'Claim Status',
+                    width: '10%',
+                  },
+                ],
+                measures: [
+                  {
+                    qField: '=Sum([Total Claim Cost])',
+                    qLabel: 'Claim Cost',
+                    width: '10%',
+                  }
+                ]
+              },
+            ]} 
+          bandedRows
+          />
         </Box>
       </Box>
     </Box>
