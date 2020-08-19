@@ -5,6 +5,7 @@ import {
   useScreenSize,
   CurrentSelections,
   Line,
+  Column,
 } from "@motor-js/core";
 
 const PageContent = () => {
@@ -37,77 +38,117 @@ const PageContent = () => {
         overflow="visible"
         direction={flexDirection}
       >
-        <Box height='400px' width={dynamicWidth} {...boxProps} overflow="visible">
-        <Line
-          height='400px'
-          curve='Natural'
-          symbol='none'
-          chartColor={['#ff6961']}
-          border=''
-          areaChart
-          cols={[
-            {
-              qField: "[Claim Settled Date]",
-              qLabel: "Claim Settled Date",
-            },
-            {
-              qField: "=Sum([Total Claim Cost])",
-              qLabel: "Total Claim Cost",
-            },
-          ]} 
-        />
+        <Box
+          // height="400px"
+          width={dynamicWidth}
+          {...boxProps}
+          overflow="visible"
+        >
+          <Line
+            height="400px"
+            curve="Natural"
+            symbol="none"
+            chartColor={["#ff6961"]}
+            border=""
+            areaChart
+            cols={[
+              {
+                qField: "[Claim Settled Date]",
+                qLabel: "Claim Settled Date",
+              },
+              {
+                qField: "=Sum([Total Claim Cost])",
+                qLabel: "Total Claim Cost",
+              },
+            ]}
+          />
         </Box>
-        <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Table 
-            margin='20px'
-            size='small'
-            height='600px'
-            tableWidth='800px'
-            wrapperWidth='600px'
+        <Box
+          // height="400px"
+          width={dynamicWidth}
+          {...boxProps}
+          overflow="visible"
+        >
+          <Column
+            height="400px"
+            curve="Natural"
+            symbol="none"
+            chartColor={["#ff6961"]}
+            border="none"
+            showLegend={false}
+            cols={[
+              {
+                qField: "[Claim Sub-Type]",
+                qLabel: "Claim Sub-Type",
+              },
+              {
+                qField: "=Sum([Total Claim Cost])",
+                qLabel: "Total Claim Cost",
+              },
+            ]}
+          />
+        </Box>
+      </Box>
+      <Box
+        width="100%"
+        flex="grow"
+        wrapProp={true}
+        overflow="visible"
+        direction={flexDirection}
+      >
+        <Box {...boxProps} overflow="visible">
+          <Table
+            margin="20px"
+            size="small"
+            height="100%"
+            tableWidth="100%"
+            wrapperWidth="100%"
+            interactiveSort
             columns={[
               {
                 dimensions: [
                   {
                     qField: "[Vehicle Type]",
-                    qLabel: 'Vehicle Type',
-                    width: '10%',
+                    qLabel: "Vehicle Type",
+                    // width: "5%",
+                    // width: "150px",
                   },
                   {
                     qField: "[Claim Settled Date]",
-                    qLabel: 'Claim Settled Date',
-                    width: '10%',
+                    qLabel: "Claim Settled Date",
+                    // width: "5%",
                   },
                   {
                     qField: "[Claim Type]",
-                    qLabel: 'Claim Type',
-                    width: '10%',
+                    qLabel: "Claim Type",
+                    // width: "5%",
                   },
-                  {
-                    qField: "[Vehicle Type]",
-                    qLabel: 'Vehicle Type',
-                    width: '15%',
-                  },
+                  // {
+                  //   qField: "[Vehicle Type]",
+                  //   qLabel: "Vehicle Type",
+                  //   width: "15%",
+                  // },
                   {
                     qField: "[Claim Sub-Type]",
-                    qLabel: 'Claim Sub-Type',
-                    width: '15%',
+                    qLabel: "Claim Sub-Type",
+                    // width: "7.5%",
                   },
                   {
                     qField: "[Claim Status]",
-                    qLabel: 'Claim Status',
-                    width: '10%',
+                    qLabel: "Claim Status",
+                    // width: "5%",
                   },
                 ],
                 measures: [
                   {
-                    qField: '=Sum([Total Claim Cost])',
-                    qLabel: 'Claim Cost',
-                    width: '10%',
-                  }
-                ]
+                    qField: "=Sum([Total Claim Cost])",
+                    qLabel: "Claim Cost",
+                    width: "5%",
+                  },
+                ],
               },
-            ]} 
-          bandedRows
+            ]}
+            bandedRows
           />
         </Box>
       </Box>
