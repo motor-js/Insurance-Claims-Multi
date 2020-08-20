@@ -11,9 +11,6 @@ import {
 const PageContent = () => {
   const { screen } = useScreenSize();
 
-  const chartColor = "red";
-  const height = "315px";
-
   let flexDirection = "column";
   if (screen === "desktop" || screen === "largeDesktop") {
     flexDirection = "row";
@@ -38,17 +35,12 @@ const PageContent = () => {
         overflow="visible"
         direction={flexDirection}
       >
-        <Box
-          // height="400px"
-          width={dynamicWidth}
-          {...boxProps}
-          overflow="visible"
-        >
+        <Box width={dynamicWidth} {...boxProps} overflow="visible">
           <Line
             height="400px"
             curve="Natural"
             symbol="none"
-            chartColor={["#ff6961"]}
+            colorTheme={["#ff6961"]}
             border=""
             areaChart
             cols={[
@@ -63,17 +55,11 @@ const PageContent = () => {
             ]}
           />
         </Box>
-        <Box
-          // height="400px"
-          width={dynamicWidth}
-          {...boxProps}
-          overflow="visible"
-        >
+        <Box width={dynamicWidth} {...boxProps} overflow="visible">
           <Column
             height="400px"
             curve="Natural"
             symbol="none"
-            chartColor={["#ff6961"]}
             border="none"
             showLegend={false}
             cols={[
@@ -103,6 +89,8 @@ const PageContent = () => {
             height="100%"
             tableWidth="100%"
             wrapperWidth="100%"
+            headerAlignment="leftRight"
+            bodyAlignment="leftRight"
             interactiveSort
             columns={[
               {
@@ -123,11 +111,6 @@ const PageContent = () => {
                     qLabel: "Claim Type",
                     // width: "5%",
                   },
-                  // {
-                  //   qField: "[Vehicle Type]",
-                  //   qLabel: "Vehicle Type",
-                  //   width: "15%",
-                  // },
                   {
                     qField: "[Claim Sub-Type]",
                     qLabel: "Claim Sub-Type",
@@ -144,6 +127,8 @@ const PageContent = () => {
                     qField: "=Sum([Total Claim Cost])",
                     qLabel: "Claim Cost",
                     width: "5%",
+                    qNumType: "M",
+                    qNumFmt: "£#,##0.00",
                   },
                 ],
               },

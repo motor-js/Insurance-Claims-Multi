@@ -1,6 +1,6 @@
 import React from "react";
-import { SidebarNext, Filter, Button } from "@motor-js/core";
-import { Filter as FilterIcon } from "@styled-icons/feather";
+import { SidebarNext, Filter, Button, SmartHeading } from "@motor-js/core";
+import { Filter as FilterIcon } from "@styled-icons/fa-solid";
 
 const Logo = require("../images/logo.png");
 const Qlik = require("../images/Qlik.png");
@@ -20,22 +20,24 @@ const FilterContent = (props) => {
         </div>
       }
       footer={
-        <div style={{ color: "#ff6961", fontSize: "24px" }}>
-          <span>
-            <a href="http://motor-js.io//">
-              <img src={Logo} style={{ width: "10%" }} alt={"logo"} />
-            </a>{" "}
-            Powered by{" "}
-            <img src={Qlik} style={{ width: "10%" }} alt={"Qlik logo"} />
-          </span>
-        </div>
+        <SmartHeading type="free" size={"24px"} color={"brand"}>
+          <a href="http://motor-js.io//">
+            <img src={Logo} style={{ width: "10%" }} alt={"logo"} />
+          </a>
+          &nbsp;Powered by&nbsp;
+          <img src={Qlik} style={{ width: "10%" }} alt={"Qlik logo"} />
+        </SmartHeading>
       }
     >
-      <Filter width='100%' label="Claim Status" dimension={["Claim Status"]} />
-      <Filter width='100%' label="Claim Type" dimension={["Claim Type"]} />
-      <Filter width='100%' label="Claim Sub-Type" dimension={["Claim Sub-Type"]} />
-      <Filter width='100%' label="Broker" dimension={["BrokerName"]} />
-      <Button type='clearSelections'>Clear Selections</Button>
+      <Filter width="100%" label="Claim Status" dimension={["Claim Status"]} />
+      <Filter width="100%" label="Claim Type" dimension={["Claim Type"]} />
+      <Filter
+        width="100%"
+        label="Claim Sub-Type"
+        dimension={["Claim Sub-Type"]}
+      />
+      <Filter width="100%" label="Broker" dimension={["BrokerName"]} />
+      <Button type="clearSelections">Clear Selections</Button>
     </SidebarNext>
   );
 };

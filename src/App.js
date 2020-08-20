@@ -10,8 +10,7 @@ import {
   MainContent,
   PageContent,
 } from "./sections";
-import { Grid, Box } from "@motor-js/core";
-
+import { Grid, Box, SmartHeading } from "@motor-js/core";
 
 function App() {
   return (
@@ -29,18 +28,17 @@ function App() {
         >
           {/** HEADER */}
           <HeaderContent>
-            <span
-              style={{
-                color: "white",
-                fontWeight: "bold",
-                marginLeft: "45px",
-              }}
+            <SmartHeading
+              type="free"
+              margin="0 0 0 45px"
+              color="white"
+              fontWeigh="bold"
             >
               Insurance Claims Dashboard
               <span role="img" aria-label="peace_emoji">
                 ✌️
               </span>
-            </span>
+            </SmartHeading>
           </HeaderContent>
           {/** MAIN */}
           <Box gridArea="main">

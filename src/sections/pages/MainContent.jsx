@@ -12,7 +12,6 @@ import {
 const MainContent = () => {
   const { screen } = useScreenSize();
 
-  const chartColor = "bio";
   const height = "315px";
 
   let flexDirection = "column";
@@ -34,7 +33,9 @@ const MainContent = () => {
       <Box width="100%" direction={flexDirection}>
         <Box flex={true} height="120px" {...boxProps}>
           <KPI
-            onClick={() => {window.confirm("You've clicked me!")}}
+            onClick={() => {
+              window.confirm("You've clicked me!");
+            }}
             margin="10px"
             cols={[
               "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [ClaimCounter] )",
@@ -88,7 +89,8 @@ const MainContent = () => {
             margin="10px"
             cols={[
               {
-                qField: "=Avg( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])",
+                qField:
+                  "=Avg( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])",
                 qNumType: "M",
                 qNumFmt: "£#,##0",
               },
@@ -124,7 +126,6 @@ const MainContent = () => {
             suppressZero={true}
             textOnAxis="xAxis"
             border={false}
-            chartColor={chartColor}
           />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
@@ -151,7 +152,6 @@ const MainContent = () => {
             suppressZero={true}
             title="Total Claims Cost"
             border={false}
-            chartColor={chartColor}
             showLegend={false}
           />
         </Box>
@@ -179,7 +179,6 @@ const MainContent = () => {
             suppressScroll={true}
             title={"Total claim cost"}
             border={false}
-            chartColor={chartColor}
           />
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
@@ -192,10 +191,8 @@ const MainContent = () => {
                 qLabel: "Total Claim Costs",
               },
             ]}
-            
             border={false}
             showLegend={true}
-            chartColor={chartColor}
           />
         </Box>
       </Box>
