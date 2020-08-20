@@ -36,7 +36,6 @@ const MainContent = () => {
             onClick={() => {
               window.confirm("You've clicked me!");
             }}
-            margin="10px"
             cols={[
               "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [ClaimCounter] )",
             ]}
@@ -49,7 +48,6 @@ const MainContent = () => {
         </Box>
         <Box flex={true} height="120px" {...boxProps}>
           <KPI
-            margin="10px"
             cols={[
               "=Sum( { $< [Claim Settled Date.autoCalendar.InYTD]={1} ,[Claim Settled Date.autoCalendar.YearsAgo]={0} > } [ClaimCounter] )",
             ]}
@@ -60,7 +58,6 @@ const MainContent = () => {
         </Box>
         <Box flex={true} height="120px" {...boxProps}>
           <KPI
-            margin="10px"
             cols={[
               {
                 qField:
@@ -86,7 +83,6 @@ const MainContent = () => {
         </Box>
         <Box flex={true} height="120px" {...boxProps}>
           <KPI
-            margin="10px"
             cols={[
               {
                 qField:
