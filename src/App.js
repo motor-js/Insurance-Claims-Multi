@@ -8,6 +8,7 @@ import {
   FilterContent,
   NavContent,
   MainContent,
+  BoxDemoContent,
   PageContent,
 } from "./sections";
 import { Grid, Box, SmartHeading } from "@motor-js/core";
@@ -45,6 +46,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={MainContent} />
               <Route path="/sales" component={PageContent} />
+              <Route path="/boxDemo" component={BoxDemoContent} />
               {/* <Route component={NoMatch} /> */}
             </Switch>
           </Box>
