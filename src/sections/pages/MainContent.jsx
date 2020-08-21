@@ -5,6 +5,8 @@ import {
   Grid,
   KPI,
   Column,
+  Bar,
+  Pie,
 } from "@motor-js/core";
 
 import Background from "../../images/motor.jpg";
@@ -52,9 +54,10 @@ const PageContent = () => {
               "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1}, [Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])/1000000",
             qLabel: "Margin Amount",
             qNumType: "M",
-            qNumFmt: "$#,##0",
+            qNumFmt: "£#,##0",
           },
         ]}
+        roundNum={false}
         label="Claims Opened (YTD)"
         size="small"
         gridArea="kpi3"
@@ -65,14 +68,15 @@ const PageContent = () => {
             qField:
               "=Avg( { $< [Claim Notification Date.autoCalendar.InYTD]={1} ,[Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])",
             qNumType: "M",
-            qNumFmt: "$#,##0",
+            qNumFmt: "£#,##0",
           },
         ]}
         label="Claims Opened (YTD)"
         size="small"
+        roundNum={false}
         gridArea="kpi4"
       />
-      <Column
+      <Bar
         // height={height}
         height="340px"
         cols={[
@@ -81,19 +85,16 @@ const PageContent = () => {
             qLabel: "Claim Year",
           },
           {
-            qField: "=Sum([Total Claim Cost])",
-            qLabel: "Total Claim Cost",
-            qNumFormat: {
-              qType: "M",
-              qnDec: 0,
-              qUseThou: 1,
-              qFmt: "£#,##0",
-              qDec: ".",
-              qThou: ",",
-            },
+            qField: "[Claim Type]",
+            qLabel: "Claim Type",
+          },
+          {
+            qField:
+              "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1} > } [ClaimCounter] )",
+            qLabel: "Claims Opened (All Yrs YTD)",
           },
         ]}
-        // stacked={true}
+        stacked={true}
         suppressZero={true}
         textOnAxis="xAxis"
         // border={false}
@@ -111,77 +112,45 @@ const PageContent = () => {
           {
             qField: "=Sum([Total Claim Cost])",
             qLabel: "Total Claim Cost",
-            qNumFormat: {
-              qType: "M",
-              qnDec: 0,
-              qUseThou: 1,
-              qFmt: "£#,##0",
-              qDec: ".",
-              qThou: ",",
-            },
+            qNumType: "M",
+            qNumFmt: "£#,##0",
           },
         ]}
-        // stacked={true}
         suppressZero={true}
-        textOnAxis="xAxis"
-        // border={false}
-        // chartColor={chartColor}
+        title="Total Claims Cost"
+        border={false}
+        showLegend={false}
         gridArea="chart2"
       />{" "}
-      <Column
-        // height={height}
+      <Bar
         height="340px"
         cols={[
+          { qField: "[Vehicle Type]", qLabel: "Vehicle Type" },
+          // { qField: "[Claim Type]", qLabel: "Claim Type" },
           {
-            qField: "[Claim Notification Date.autoCalendar.Year]",
-            qLabel: "Claim Year",
-          },
-          {
-            qField: "=Sum([Total Claim Cost])",
-            qLabel: "Total Claim Cost",
-            qNumFormat: {
-              qType: "M",
-              qnDec: 0,
-              qUseThou: 1,
-              qFmt: "£#,##0",
-              qDec: ".",
-              qThou: ",",
-            },
+            qField: "=Sum({[State 1]}[Total Claim Cost])",
+            qLabel: "Total Claim Costs",
+            qNumType: "M",
+            qNumFmt: "£#,##0",
           },
         ]}
-        // stacked={true}
         suppressZero={true}
-        textOnAxis="xAxis"
-        // border={false}
-        // chartColor={chartColor}
+        showLegend={false}
+        suppressScroll={true}
+        title={"Total claim cost"}
         gridArea="chart3"
       />
-      <Column
-        // height={height}
+      <Pie
         height="340px"
         cols={[
-          {
-            qField: "[Claim Notification Date.autoCalendar.Year]",
-            qLabel: "Claim Year",
-          },
+          { qField: "[Claim Type]", qLabel: "Claim Type" },
           {
             qField: "=Sum([Total Claim Cost])",
-            qLabel: "Total Claim Cost",
-            qNumFormat: {
-              qType: "M",
-              qnDec: 0,
-              qUseThou: 1,
-              qFmt: "£#,##0",
-              qDec: ".",
-              qThou: ",",
-            },
+            qLabel: "Total Claim Costs",
           },
         ]}
-        // stacked={true}
-        suppressZero={true}
-        textOnAxis="xAxis"
-        // border={false}
-        // chartColor={chartColor}
+        border={false}
+        showLegend={true}
         gridArea="chart4"
       />
     </Grid>
