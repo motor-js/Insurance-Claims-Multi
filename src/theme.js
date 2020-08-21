@@ -6,11 +6,6 @@ const theme = {
     },
     colorTheme: "red",
   },
-  line: {
-    main: {
-      dataPointsToShow: 680,
-    },
-  },
 };
 
 export default theme;
