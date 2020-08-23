@@ -15,6 +15,6 @@ export const navItems = [
     path: "/boxDemo",
     name: "Home (Flebox Demo)",
     css: "fa fa-fw fa-home",
-    key: 2,
+    key: 3,
   },
 ];

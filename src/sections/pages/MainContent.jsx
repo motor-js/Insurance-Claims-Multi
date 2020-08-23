@@ -13,12 +13,12 @@ import Background from "../../images/motor.jpg";
 const PageContent = () => {
   return (
     <Grid
-      style={{
-        backgroundImage: `url(${Background})`,
-        backgroundRepeat: "no - repeat",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: `url(${Background})`,
+      //   backgroundRepeat: "no - repeat",
+      //   backgroundAttachment: "fixed",
+      //   backgroundSize: "cover",
+      // }}
       rows={["70px", "120px", "355px", "355px"]}
       columns={["repeat(8, 1fr)"]}
       areas={[
@@ -78,7 +78,7 @@ const PageContent = () => {
       />
       <Bar
         // height={height}
-        height="340px"
+        // height="325px"
         cols={[
           {
             qField: "[Claim Notification Date.autoCalendar.Year]",
@@ -103,7 +103,7 @@ const PageContent = () => {
       />
       <Column
         // height={height}
-        height="340px"
+        // height="325px"
         cols={[
           {
             qField: "[Claim Notification Date.autoCalendar.Year]",
@@ -118,12 +118,12 @@ const PageContent = () => {
         ]}
         suppressZero={true}
         title="Total Claims Cost"
-        border={false}
+        // border={false}
         showLegend={false}
         gridArea="chart2"
       />{" "}
       <Bar
-        height="340px"
+        // height="325px"
         cols={[
           { qField: "[Vehicle Type]", qLabel: "Vehicle Type" },
           // { qField: "[Claim Type]", qLabel: "Claim Type" },
@@ -141,7 +141,7 @@ const PageContent = () => {
         gridArea="chart3"
       />
       <Pie
-        height="340px"
+        // height="325px"
         cols={[
           { qField: "[Claim Type]", qLabel: "Claim Type" },
           {
@@ -149,7 +149,7 @@ const PageContent = () => {
             qLabel: "Total Claim Costs",
           },
         ]}
-        border={false}
+        // border={false}
         showLegend={true}
         gridArea="chart4"
       />

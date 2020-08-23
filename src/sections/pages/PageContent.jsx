@@ -6,29 +6,22 @@ import Background from "../../images/motor.jpg";
 const PageContent = () => {
   return (
     <Grid
-      style={{
-        backgroundImage: `url(${Background})`,
-        backgroundRepeat: "no - repeat",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-      }}
-      rows={["80px", , "310px", "310px"]}
+      // style={{
+      //   backgroundImage: `url(${Background})`,
+      //   backgroundRepeat: "no - repeat",
+      //   backgroundAttachment: "fixed",
+      //   backgroundSize: "cover",
+      // }}
+      rows={["80px", , "305px", "305px"]}
       columns={["repeat(2, 1fr)"]}
       areas={[
         ["selections", "selections"],
         ["table", "chart2"],
         ["table", "chart1"],
       ]}
-      // areas={[
-      //   ["selections selections selections selections"],
-      //   ["chart1 chart1 chart2 chart2"],
-      //   ["dataTable dataTable dataTable dataTable"],
-      // ]}
     >
       <CurrentSelections minHeight="60px" gridArea="selections" />
       <Line
-        // height={height}
-        height="290px"
         curve="Natural"
         symbol="none"
         colorTheme={["#ff6961"]}
@@ -46,7 +39,6 @@ const PageContent = () => {
         gridArea="chart1"
       />
       <Column
-        height="290px"
         cols={[
           {
             qField: "[Claim Sub-Type]",
@@ -58,14 +50,14 @@ const PageContent = () => {
           },
         ]}
         gridArea="chart2"
-      />{" "}
+      />
       <Table
         size="small"
-        height="590px"
+        height="570px"
         headerAlignment="leftRight"
         bodyAlignment="leftRight"
         interactiveSort
-        pageHeight={25}
+        pageHeight={24}
         columns={[
           {
             dimensions: [

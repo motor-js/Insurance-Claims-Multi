@@ -4,7 +4,24 @@ const theme = {
     color: {
       brand: "#ff6961",
     },
-    colorTheme: "red",
+    border: {
+      color: "brand",
+      size: "1px",
+      style: "solid",
+    },
+
+    chart: {
+      border: {
+        color: "brand",
+        size: "1px",
+        style: "solid",
+      },
+    },
+
+    colorTheme: "bio",
+  },
+  spinner: {
+    color: "brand",
   },
 };
 
