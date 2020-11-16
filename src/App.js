@@ -6,9 +6,7 @@ import {
   FooterContent,
   HeaderContent,
   FilterContent,
-  NavContent,
   MainContent,
-  PageContent,
 } from "./sections";
 import { Grid, Box } from "@motor-js/core";
 
@@ -17,7 +15,6 @@ function App() {
   return (
     <Router>
       {/** NAVBAR */}
-      <NavContent />
       <FilterContent />
       <div id="App">
         <Grid
@@ -46,7 +43,6 @@ function App() {
           <Box gridArea="main">
             <Switch>
               <Route exact path="/" component={MainContent} />
-              <Route path="/sales" component={PageContent} />
               {/* <Route component={NoMatch} /> */}
             </Switch>
           </Box>

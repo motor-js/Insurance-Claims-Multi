@@ -5,8 +5,6 @@ import {
   CurrentSelections,
   KPI,
   Bar,
-  Column,
-  Pie,
 } from "@motor-js/core";
 
 const MainContent = () => {
@@ -29,7 +27,7 @@ const MainContent = () => {
   const dynamicWidth = "calc(50% - 10px)";
 
   return (
-    <Box padding="10px" width="100%" overflow="scroll" direction="column">
+    <Box padding="0px" width="100%" overflow="scroll" direction="column">
       <CurrentSelections minHeight="60px" width="100%" />
       <Box width="100%" direction={flexDirection}>
         <Box flex={true} height="120px" {...boxProps}>
@@ -66,15 +64,7 @@ const MainContent = () => {
                   "=Sum( { $< [Claim Notification Date.autoCalendar.InYTD]={1}, [Claim Notification Date.autoCalendar.YearsAgo]={0} > } [Total Claim Cost])/1000000",
                 qLabel: "Margin Amount",
                 qNumType: "M",
-                qNumFmt: "£#,##0",
-                // qNumFormat: {
-                //   qType: "M",
-                //   qnDec: 0,
-                //   qUseThou: 1,
-                //   qFmt: "£#,##0",
-                //   qDec: ".",
-                //   qThou: ",",
-                // },
+                qNumFmt: "£#,##0"
               },
             ]}
             roundNum={false}
@@ -100,11 +90,9 @@ const MainContent = () => {
           />
         </Box>
       </Box>
-
-      <Box width="100%" flex="grow" wrapProp={true} overflow="visible">
-        <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Bar
-            height={height}
+      <Bar
+          height={450}
+          width={900}
             cols={[
               {
                 qField: "[Claim Notification Date.autoCalendar.Year]",
@@ -120,15 +108,13 @@ const MainContent = () => {
                 qLabel: "Claims Opened (All Yrs YTD)",
               },
             ]}
-            stacked={true}
-            suppressZero={true}
-            textOnAxis="xAxis"
-            border={false}
-            chartColor={chartColor}
           />
+      <Box width="100%" flex="grow" wrapProp={true} overflow="visible">
+        <Box width={dynamicWidth} {...boxProps} overflow="visible">
+         
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Column
+         {/*<Bar
             height={height}
             cols={[
               {
@@ -153,10 +139,10 @@ const MainContent = () => {
             border={false}
             chartColor={chartColor}
             showLegend={false}
-          />
+          />*/}
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Bar
+          {/*<Bar
             height={height}
             cols={[
               { qField: "[Vehicle Type]", qLabel: "Vehicle Type" },
@@ -180,23 +166,9 @@ const MainContent = () => {
             title={"Total claim cost"}
             border={false}
             chartColor={chartColor}
-          />
+          />*/}
         </Box>
         <Box width={dynamicWidth} {...boxProps} overflow="visible">
-          <Pie
-            height={height}
-            cols={[
-              { qField: "[Claim Type]", qLabel: "Claim Type" },
-              {
-                qField: "=Sum([Total Claim Cost])",
-                qLabel: "Total Claim Costs",
-              },
-            ]}
-            
-            border={false}
-            showLegend={true}
-            chartColor={chartColor}
-          />
         </Box>
       </Box>
     </Box>
